@@ -1,4 +1,4 @@
-<img width="1254" height="1254" alt="ChatGPT Image 2026  szept  10  09_26_39" src="https://github.com/user-attachments/assets/e0855595-94b0-47a3-a995-c63a80d1e8ed" />
+
 <h2>Főötlet</h2> <br>
 
 Éjszakai Snack és Junk Food Futárszolgálat Egy fiktív webshop, ami édességeket, különleges ázsiai nassolnivalókat, üdítőket, gyorsételeket szállít ki éjszaka a fáradt embereknek. Lehet reklámozni hogy kolis pack meg diákkedvezmények, gamer pack, after midnight menü vagy after work stb. <br>
@@ -6,5 +6,5 @@ Kreatív extra: Mivel ételről van szó, kötelező elem a kosár oldalon a pon
 
 Nev: AllNightSnack <br>
 Rövid név: ANS <br>
-Logo: <br>
+Logo:<img width="500" height="500" alt="ChatGPT Image 2026  szept  10  09_26_39" src="https://github.com/user-attachments/assets/e0855595-94b0-47a3-a995-c63a80d1e8ed" /> <br>
 Motto: ,,Hajnali éhség? AllNightSnack!" <br>

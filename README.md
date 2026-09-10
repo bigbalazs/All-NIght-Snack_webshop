@@ -7,5 +7,5 @@ Kreatív extra: Mivel ételről van szó, kötelező elem a kosár oldalon a pon
 Nev: AllNightSnack <br>
 Rövid név: ANS <br>
 Logo: <br>
-<img width="500" height="500" alt="ChatGPT Image 2026  szept  10  09_26_39" src="https://github.com/user-attachments/assets/e0855595-94b0-47a3-a995-c63a80d1e8ed" /> <br>
+<img width="250" height="250" alt="ChatGPT Image 2026  szept  10  09_26_39" src="https://github.com/user-attachments/assets/e0855595-94b0-47a3-a995-c63a80d1e8ed" /> <br>
 Motto: ,,Hajnali éhség? AllNightSnack!" <br>

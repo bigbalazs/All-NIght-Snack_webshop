@@ -4,4 +4,6 @@
 Kreatív extra: Mivel ételről van szó, kötelező elem a kosár oldalon a pontos szállítási időpont és cím megadása (HTML5 <input type="time"> és <input type="text">), valamint egy kuponkód-mező, ami JavaScripttel levon 10-20%-ot a végösszegből.
 
 Nev: AllNightSnack <br>
-Rövid név: ANS
+Rövid név: ANS <br>
+Logo: <br>
+Motto: ,,Hajnali éhség? AllNightSnack!" <br>

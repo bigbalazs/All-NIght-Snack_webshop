@@ -1,0 +1,48 @@
+.legordulo {
+    position: relative;
+    display: inline-block;
+}
+
+.legordulo_gomb {
+    color:black;
+    background-color:darkgoldenrod;
+    border: none;
+    cursor: pointer;
+    padding:16px;
+    font-size: 16px;
+}
+
+.legordulo_gomb:hover {
+    background-color: goldenrod;
+}
+
+.legordulo_gomb::after {
+    content: " ▼"; 
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.legordulo_tartalom {
+    display: none;
+    position: absolute;
+    background-color: rgb(209, 186, 128);
+    color: black;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.legordulo_tartalom a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.legordulo:hover > .legordulo_tartalom {
+  display: block;
+}
+
+.legordulo_tartalom a:hover {
+    background-color: goldenrod;
+}

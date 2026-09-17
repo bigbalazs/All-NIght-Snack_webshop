@@ -1,5 +1,136 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
     padding: 15px;
-    background-color: #9797d9;
-    color: #f6f6f8;
+    background-color: rgb(24, 24, 30);
+    color: white;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    color: rgb(250, 186, 59);
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.navbar {
+    margin-bottom: 40px;
+    background-color: rgb(34, 34, 42);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.legordulo {
+    position: relative;
+    display: inline-block;
+}
+
+.legordulo_gomb {
+    color: rgb(18, 18, 24);
+    background-color: rgb(250, 186, 59);
+    border: none;
+    cursor: pointer;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.legordulo_gomb:hover {
+    background-color: rgb(255, 204, 102);
+}
+
+.legordulo_gomb::after {
+    content: " ▼"; 
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.nav-item-simple a {
+    color: rgb(18, 18, 24);
+    background-color: rgb(250, 186, 59);
+    text-decoration: none;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.nav-item-simple a:hover {
+    background-color: rgb(255, 204, 102);
+}
+
+.legordulo_tartalom {
+    display: none;
+    position: absolute;
+    background-color: rgb(34, 34, 42);
+    min-width: 160px;
+    z-index: 10;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    overflow: hidden;
+    top: 100%;
+    left: 0;
+}
+
+.legordulo_tartalom a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: 0.2s;
+}
+
+.legordulo:hover > .legordulo_tartalom {
+    display: block;
+}
+
+.legordulo_tartalom a:hover {
+    background-color: rgb(250, 186, 59);
+    color: rgb(18, 18, 24);
+}
+
+.card {
+    background-color: rgb(34, 34, 42);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 300px;
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.card .container {
+    padding: 15px;
+}
+
+.card p {
+    color: #ccc;
+    font-size: 14px;
 }

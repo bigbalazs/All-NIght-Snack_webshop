@@ -41,9 +41,38 @@ h4 {
 .nav-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links-left {
+    display: flex;
+    align-items: center;
     gap: 15px;
 }
 
+.nav-profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-link {
+    display: inline-block;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.profile-link:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.profile-img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgb(250, 186, 59);
+    background-color: white; 
+}
 .legordulo {
     position: relative;
     display: inline-block;

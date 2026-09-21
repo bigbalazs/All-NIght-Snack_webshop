@@ -31,6 +31,7 @@ h4 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* --- NAVBAR STÍLUSOK --- */
 .navbar {
     margin-bottom: 40px;
     background-color: rgb(34, 34, 42);
@@ -50,29 +51,40 @@ h4 {
     gap: 15px;
 }
 
-.nav-profile {
+.nav-right {
     display: flex;
     align-items: center;
+    gap: 15px; /* Távolság a kosár és a profil ikon között */
 }
 
-.profile-link {
+/* Ikonok linkjeinek animációja rátartáskor */
+.cart-link, .profile-link {
     display: inline-block;
     transition: transform 0.2s, opacity 0.2s;
 }
 
-.profile-link:hover {
+.cart-link:hover, .profile-link:hover {
     transform: scale(1.05);
-    opacity: 0.9;
+    opacity: 0.8;
+}
+
+.cart-img {
+    width: 32px;  
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1); 
 }
 
 .profile-img {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid rgb(250, 186, 59);
     background-color: white; 
+    display: block;
 }
+
 .legordulo {
     position: relative;
     display: inline-block;
@@ -146,12 +158,53 @@ h4 {
     color: rgb(18, 18, 24);
 }
 
+/* --- HERO SZEKCIÓ (MOTTÓIG TARTÓ HÁTTÉR) --- */
+.hero_szekcio {
+  position: relative;    
+  text-align: center;    
+  padding: 40px 20px;    
+  overflow: hidden;      
+}
+
+.hero_szekcio .hatter_kep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;         
+  object-fit: cover;
+  object-position: bottom;    
+  z-index: -1;          
+}
+
+/* --- VÉGTELENÍTETT AUTOMATIKUS SLIDER --- */
+.vegtelen-slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px 0;
+  position: relative;
+}
+
+.slider-sav {
+  display: flex;
+  gap: 20px;
+  width: max-content; 
+  animation: csuszas 20s linear infinite;
+}
+
+/* HA RÁVISZIK AZ EGERET: Az animáció megáll (pause) */
+.vegtelen-slider:hover .slider-sav {
+    animation-play-state: paused;
+}
+
 .card {
     background-color: rgb(34, 34, 42);
     border-radius: 8px;
     overflow: hidden;
-    max-width: 300px;
-    margin: 40px auto;
+    width: 300px;        
+    flex-shrink: 0;      
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
@@ -160,6 +213,16 @@ h4 {
 }
 
 .card p {
-    color: #ccc;
+    color: rgb(255, 255, 255);
     font-size: 14px;
+}
+
+/* AZ ANIMÁCIÓ LOGIKÁJA */
+@keyframes csuszas {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px)); 
+  }
 }

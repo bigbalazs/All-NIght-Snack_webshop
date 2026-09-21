@@ -226,3 +226,41 @@ h4 {
     transform: translateX(calc(-50% - 10px)); 
   }
 }
+
+.has-side-almenu {
+    position: relative;
+}
+
+.almenu-fejlec {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nyil {
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.side-submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgb(44, 44, 54);
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 20; /* Így biztosan felül jelenik meg */
+}
+
+/* Hover-re megjelenítés */
+.has-side-almenu:hover > .side-submenu {
+    display: block;
+}
+
+.side-submenu a:hover {
+    background-color: rgb(250, 186, 59);
+    color: rgb(18, 18, 24);
+}

@@ -262,3 +262,11 @@ h4 {
   overflow: visible; 
   z-index: 100; 
 }
+
+.nav-logo {
+    height: 48px;
+    width: auto;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

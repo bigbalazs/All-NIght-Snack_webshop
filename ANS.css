@@ -199,12 +199,13 @@ h4 {
     animation-play-state: paused;
 }
 
+/* KÁRTYA STÍLUSOK */
 .card {
     background-color: rgb(34, 34, 42);
     border-radius: 8px;
     overflow: hidden;
-    width: 300px;        
-    flex-shrink: 0;      
+    width: 300px;        /* Fix szélesség a pontos csúszáshoz */
+    flex-shrink: 0;      /* Nem engedi, hogy a böngésző összenyomja a kártyákat */
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
@@ -227,40 +228,37 @@ h4 {
   }
 }
 
-.has-side-almenu {
-    position: relative;
-}
-
-.almenu-fejlec {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nyil {
-    font-size: 10px;
-    margin-left: 10px;
-}
 
 .side-submenu {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    background-color: rgb(44, 44, 54);
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
-    border-radius: 4px;
-    overflow: hidden;
-    z-index: 20; /* Így biztosan felül jelenik meg */
+  display: none;
+  position: absolute;
+  left: 100%;     
+  top: 0;           
+  background-color: #24252a; 
+  min-width: 160px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
-/* Hover-re megjelenítés */
-.has-side-almenu:hover > .side-submenu {
-    display: block;
+.has-side-almenu {
+  position: relative;
+}
+
+.has-side-almenu:hover .side-submenu {
+  display: block;
+}
+
+.side-submenu a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
 .side-submenu a:hover {
-    background-color: rgb(250, 186, 59);
-    color: rgb(18, 18, 24);
+  background-color: #3e3f46; 
+}
+.legordulo_tartalom {  
+  position: absolute; 
+  overflow: visible; 
+  z-index: 100; 
 }

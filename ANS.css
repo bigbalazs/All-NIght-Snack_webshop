@@ -24,6 +24,8 @@ h4 {
 
 .logo {
     display: block;
+    width: 150px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10%;
@@ -271,42 +273,166 @@ h4 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.aloldal-cim{
+/* ==========================================================================
+   ÜDVÖZLŐ / BEJELENTKEZŐ MENÜ KÁRTYA STÍLUSOK (Kezdőmenü rész)
+   ========================================================================== */
+
+/* A kártyát és a fejlécet összefogó központi tároló */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    color: rgb(255, 255, 255);
-    margin-top: 20px;
-    margin-bottom: 100px;
+    margin: 60px auto;
+    padding: 0 15px;
+    max-width: 400px;
+    width: 100%;
 }
 
-.leiras p {
-    font-size: 17px;
-    text-align:left;
-    max-width: 50vw;
+/* A kezdőmenü kártya (Box) alapja */
+.auth-card {
+    background-color: rgb(34, 34, 42); /* Megegyezik a navbar és a kártyák színével */
+    width: 100%;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgb(44, 44, 54);
+    margin-top: 10px;
 }
 
-.leiras-quote {
-    font-style: italic;
+/* Univerzális gombalapok az auth-kártyán belül */
+.auth-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
     text-align: center;
-    opacity: 90%;
-    max-width: 550px;
-    margin: 0 auto;
-    padding: 20px 25px;
-    border-radius: 12px;
-    border: 1px solid rgba(245, 158, 11, 0.4);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(245, 158, 11, 0.15);
-    background-color: rgba(255, 255, 255, 0.03);
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
 }
 
-.leiras h2 {
+/* Gomb animáció rátartáskor (kissé megemelkedik) */
+.auth-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Regisztráció gomb (Tele sárga) */
+.auth-btn-primary {
+    background-color: rgb(250, 186, 59);
+    color: rgb(18, 18, 24);
+}
+
+.auth-btn-primary:hover {
+    background-color: rgb(255, 204, 102);
+}
+
+/* Bejelentkezés gomb (Fekete/Sötét alapon sárga keret és szöveg) */
+.auth-btn-secondary {
+    background-color: rgb(18, 18, 24);
     color: rgb(250, 186, 59);
-    margin-top: 20px;
-    margin-bottom: 20px;   
+    border: 2px solid rgb(250, 186, 59);
+    padding: 12px; /* Korrigálva a border vastagsága miatt */
 }
 
-.leiras ul {
-    margin-left: 45px;
+.auth-btn-secondary:hover {
+    background-color: rgb(250, 186, 59);
+    color: rgb(18, 18, 24);
+}
+
+/* Vendég profil link */
+.auth-btn-guest {
+    background-color: transparent;
+    color: rgb(160, 160, 171);
+    font-size: 14px;
+    font-weight: normal;
+    padding: 8px;
+}
+
+.auth-btn-guest:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+/* ==========================================================================
+   BEJELENTKEZÉS ÉS REGISZTRÁCIÓS ŰRLAP STÍLUSOK (Input mezők)
+   ========================================================================== */
+
+/* Belső alcím stílus a kártyán belül */
+.auth-card h2 {
+    color: rgb(255, 255, 255);
     font-size: 20px;
-    list-style-type: square;
-    text-wrap: wrap ;
-    font-style: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Az űrlap elemeit összefogó box */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Egy-egy beviteli blokk tárolója */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+/* Mezők feletti kis feliratok */
+.input-group label {
+    font-size: 14px;
+    color: rgb(250, 186, 59); /* Sárga feliratok a jó olvashatóságért */
+    font-weight: bold;
+}
+
+/* Modern sötét input mezők */
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(24, 24, 30); /* Kicsit sötétebb háttér, mint a kártya */
+    border: 1px solid rgb(54, 54, 64);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Amikor a felhasználó belekattint a mezőbe (Focus) */
+.input-group input:focus {
+    outline: none;
+    border-color: rgb(250, 186, 59); /* Sárgán világít a keret */
+    box-shadow: 0 0 8px rgba(250, 186, 59, 0.2);
+}
+
+/* Gombként működő HTML <button> elem igazítása a meglévő .auth-btn-hez */
+.auth-form button.auth-btn {
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Alsó apróbetűs/átirányító szövegek a kártya alján */
+.auth-footer-text {
+    font-size: 14px;
+    color: rgb(160, 160, 171);
+    text-align: center;
+    margin-top: 5px;
+}
+
+.auth-footer-text a {
+    color: rgb(250, 186, 59);
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-decoration 0.2s;
+}
+
+.auth-footer-text a:hover {
+    text-decoration: underline;
 }

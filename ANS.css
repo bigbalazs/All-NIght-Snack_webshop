@@ -436,3 +436,35 @@ h4 {
 .auth-footer-text a:hover {
     text-decoration: underline;
 }
+
+.fizetes_left {
+    justify-content: left;
+    margin: 50px;
+}
+
+.fizetes_center {
+    justify-content: center;
+    margin: 50px;
+}
+
+.fizetes_right {
+    justify-content: right;
+    margin: 50px;
+}
+
+.fizetesi_lehetosegek {
+    background-color: rgb(34, 34, 42);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;        /* Fix szélesség a pontos csúszáshoz */
+    flex-shrink: 0;      /* Nem engedi, hogy a böngésző összenyomja a kártyákat */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.fizetesi_lehetosegek p {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}

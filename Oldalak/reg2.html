@@ -3,33 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>AllNightSnack - Regisztráció</title>
-
-    <link rel="stylesheet" href="regcss.css">
+    <!-- A közös fő stíluslap elérése a mappából kilépve -->
+    <link rel="stylesheet" href="../ANS.css">
 </head>
-
 <body>
 
-    <div class="container">
+    <!-- Központi tároló az egységes kinézethez -->
+    <main class="welcome-container">
 
-        <div class="register-box">
-
-            <!-- LOGÓ -->
-            <div class="logo-container">
-                <img src="ChatGPT Image 2026. szept. 10. 09_26_39.png" alt="AllNightSnack logo">
-            </div>
-
+        <header>
+            <!-- Javított logó útvonal -->
+            <img src="../Alapkepek/ANS_logo.png" alt="LOGO" class="logo">
             <h1>AllNightSnack</h1>
+            <h4>„Hajnali éhség? AllNightSnack!”</h4>
+        </header>
 
-            <p class="slogan">
-                „Hajnali éhség? AllNightSnack!”
-            </p>
-
+        <!-- Regisztrációs kártya az űrlapnak -->
+        <section class="auth-card">
             <h2>Regisztráció</h2>
 
-            <!-- A REJTETT FORM TAG PÓTLÁSA ÉS AZ ÁTIRÁNYÍTÁS -->
-            <form action="bejelentkezes.html" method="GET">
+            <form action="bejelentkezes.html" method="GET" class="auth-form">
 
                 <div class="input-group">
                     <label for="name">Név</label>
@@ -42,7 +36,7 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="email">E-mail</label>
+                    <label for="email">E-mail cím</label>
                     <input
                         type="email"
                         id="email"
@@ -71,18 +65,22 @@
                     >
                 </div>
 
-                <button type="submit">Regisztráció</button>
+                <!-- Regisztráció gomb a sárga elsődleges gomb stílusával -->
+                <button type="submit" class="auth-btn auth-btn-primary">Regisztráció</button>
             
             </form>
 
-            <p class="login-text">
-                Már van fiókod?
+            <!-- Alsó navigációs linkek -->
+            <p class="auth-footer-text">
+                Már van fiókod? 
                 <a href="bejelentkezes.html">Bejelentkezés</a>
             </p>
+            <p class="auth-footer-text">
+                <a href="kezdomenu.html">← Vissza a kezdőlapra</a>
+            </p>
+        </section>
 
-        </div>
-
-    </div>
+    </main>
 
 </body>
 </html>

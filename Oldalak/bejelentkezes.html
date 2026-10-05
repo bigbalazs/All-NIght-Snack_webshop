@@ -3,36 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>AllNightSnack - Bejelentkezés</title>
-
-    <link rel="stylesheet" href="regcss.css">
+    <!-- A közös fő stíluslap elérése a mappából kilépve -->
+    <link rel="stylesheet" href="../ANS.css">
 </head>
-
 <body>
 
-    <div class="container">
+    <!-- Központi tároló a kezdőmenühöz hasonlóan -->
+    <main class="welcome-container">
 
-        <div class="register-box">
-
-            <!-- LOGÓ -->
-            <div class="logo-container">
-                <img src="ChatGPT Image 2026. szept. 10. 09_26_39.png" alt="AllNightSnack logo">
-            </div>
-
+        <header>
+            <!-- Javított logó útvonal -->
+            <img src="../Alapkepek/ANS_logo.png" alt="LOGO" class="logo">
             <h1>AllNightSnack</h1>
+            <h4>„Hajnali éhség? AllNightSnack!”</h4>
+        </header>
 
-            <p class="slogan">
-                „Hajnali éhség? AllNightSnack!”
-            </p>
-
+        <!-- Bejelentkező kártya az űrlapnak -->
+        <section class="auth-card">
             <h2>Bejelentkezés</h2>
 
-            <!-- A JAVÍTOTT ŰRLAP -->
-            <form action="main_menu.html" method="GET">
+            <form action="main_menu.html" method="GET" class="auth-form">
 
                 <div class="input-group">
-                    <label for="email">E-mail</label>
+                    <label for="email">E-mail cím</label>
                     <input
                         type="email"
                         id="email"
@@ -51,18 +45,22 @@
                     >
                 </div>
 
-                <button type="submit">Bejelentkezés</button>
+                <!-- Belépés gomb a sárga elsődleges gomb stílusával -->
+                <button type="submit" class="auth-btn auth-btn-primary">Bejelentkezés</button>
 
             </form>
 
-            <p class="login-text">
-                Még nincs fiókod?
+            <!-- Visszalépési link a regisztrációhoz vagy a kezdőmenühöz -->
+            <p class="auth-footer-text">
+                Még nincs fiókod? 
                 <a href="reg2.html">Regisztráció</a>
             </p>
+            <p class="auth-footer-text">
+                <a href="kezdomenu.html">← Vissza a kezdőlapra</a>
+            </p>
+        </section>
 
-        </div>
-
-    </div>
+    </main>
 
 </body>
 </html>

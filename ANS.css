@@ -550,3 +550,55 @@ footer {
   text-align: center;        /* Középre igazítás */
   border-top: 1px solid #2d2d2d; /* Finom elválasztó vonal */
 }
+
+.leiras-quote{
+    opacity: 70%;
+    font-style: italic;
+    font-size: 17px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.leiras-p{
+    font-size: 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.aloldal-cim {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.alcim{
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: rgb(250, 186, 59);
+}
+
+.kuldetesunk{
+    border: 20px, rgb(250, 186, 59);
+
+}
+
+.kartya {
+    border-radius: 12px;
+    padding: 24px 32px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    border: 10px solid #334155;
+    background-color: #1e293b;
+
+}
+
+.felsorolas ul{
+    font-size: 20px;
+    list-style-type: disc;
+    border: 5px solid rgb(250, 186, 59);
+    background-color: rgba(144, 110, 40, 0.754);
+    display: inline-block;
+    padding: 30px;
+    align-items: center;
+}

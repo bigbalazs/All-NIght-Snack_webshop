@@ -437,34 +437,116 @@ h4 {
     text-decoration: underline;
 }
 
-.fizetes_left {
-    justify-content: left;
-    margin: 50px;
+
+
+
+/* --- TERMÉK RÁCS ÉS KÁRTYÁK --- */
+.termek-szekcio {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 15px;
+    text-align: center;
 }
 
-.fizetes_center {
-    justify-content: center;
-    margin: 50px;
+.termek-racs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
 }
 
-.fizetes_right {
-    justify-content: right;
-    margin: 50px;
-}
-
-.fizetesi_lehetosegek {
+/* A kártya mint link */
+.termek-kartya {
     background-color: rgb(34, 34, 42);
     border-radius: 8px;
     overflow: hidden;
-    width: 300px;        /* Fix szélesség a pontos csúszáshoz */
-    flex-shrink: 0;      /* Nem engedi, hogy a böngésző összenyomja a kártyákat */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    padding: 20px;
-    margin: auto;
-    margin-bottom: 50px;
+    text-decoration: none; /* Eltünteti a link aláhúzást */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgb(44, 44, 54);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.fizetesi_lehetosegek p {
-    color: rgb(255, 255, 255);
+/* Lebegő hatás (Hover) */
+.termek-kartya:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border-color: rgb(250, 186, 59); /* Sárga keret hoverre */
+}
+
+.kep-tarolo {
+    width: 100%;
+    height: 375px;
+    overflow: hidden;
+}
+
+.termek-kep {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.termek-kartya:hover .termek-kep {
+    transform: scale(1.05); /* Enyhe kép-zoom hoverre */
+}
+
+.termek-tartalom {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1; /* Kitölti a helyet, hogy a gombok egy vonalban legyenek */
+    text-align: left;
+}
+
+.termek-tartalom h3 {
+    font-size: 20px;
+    color: white;
+}
+
+.termek-leiras {
     font-size: 14px;
+    color: rgb(180, 180, 190);
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.termek-infobar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid rgb(44, 44, 54);
+}
+
+.ar {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(250, 186, 59); /* Sárga ár */
+}
+
+.reszletek-gomb {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(250, 186, 59);
+    transition: color 0.2s;
+}
+
+.termek-kartya:hover .reszletek-gomb {
+    color: rgb(255, 204, 102);
+    text-decoration: underline;
+}
+
+footer {
+  background-color: #1a1a1a; /* Sötét háttér, hogy elkülönüljön */
+  color: #8c8c8c;            /* Visszafogott, szürke betűszín */
+  padding: 20px 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;           /* Kisebb betűméret */
+  text-align: center;        /* Középre igazítás */
+  border-top: 1px solid #2d2d2d; /* Finom elválasztó vonal */
 }

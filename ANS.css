@@ -583,6 +583,11 @@ footer {
 
 }
 
+.kartya-kontener {
+    display: flex;
+    margin-top: 60px;
+}
+
 .kartya {
     border-radius: 12px;
     padding: 24px 32px;
@@ -590,15 +595,13 @@ footer {
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
     border: 10px solid #334155;
     background-color: #1e293b;
+    transition: 0.3s ease-in-out;
+    width: 50%;
+    margin-left: 30px;
+    margin-right: 30px;
 
 }
 
-.felsorolas ul{
-    font-size: 20px;
-    list-style-type: disc;
-    border: 5px solid rgb(250, 186, 59);
-    background-color: rgba(144, 110, 40, 0.754);
-    display: inline-block;
-    padding: 30px;
-    align-items: center;
+.kartya:hover {
+    scale: 1.1;
 }

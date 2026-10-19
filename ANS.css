@@ -606,3 +606,11 @@ footer {
     scale: 1.1;
     background-color: #111822;
 }
+
+.kartya img {
+    width: 13%;
+    height: 40%;
+    display: block;
+    margin-left: auto;    
+    margin-right: auto;
+}

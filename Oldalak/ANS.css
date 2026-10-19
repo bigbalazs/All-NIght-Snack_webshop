@@ -1,0 +1,492 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    padding: 15px;
+    background-color: rgb(24, 24, 30);
+    color: white;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    color: rgb(250, 186, 59);
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: block;
+    width: 150px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* --- NAVBAR STÍLUSOK --- */
+.navbar {
+    margin-bottom: 40px;
+    background-color: rgb(34, 34, 42);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-links-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Távolság a kosár és a profil ikon között */
+}
+
+/* Ikonok linkjeinek animációja rátartáskor */
+.cart-link, .profile-link {
+    display: inline-block;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.cart-link:hover, .profile-link:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.cart-img {
+    width: 32px;  
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1); 
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgb(250, 186, 59);
+    background-color: white; 
+    display: block;
+}
+
+.legordulo {
+    position: relative;
+    display: inline-block;
+}
+
+.legordulo_gomb {
+    color: rgb(18, 18, 24);
+    background-color: rgb(250, 186, 59);
+    border: none;
+    cursor: pointer;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.legordulo_gomb:hover {
+    background-color: rgb(255, 204, 102);
+}
+
+.legordulo_gomb::after {
+    content: " ▼"; 
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.nav-item-simple a {
+    color: rgb(18, 18, 24);
+    background-color: rgb(250, 186, 59);
+    text-decoration: none;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.nav-item-simple a:hover {
+    background-color: rgb(255, 204, 102);
+}
+
+.legordulo_tartalom {
+    display: none;
+    position: absolute;
+    background-color: rgb(34, 34, 42);
+    min-width: 160px;
+    z-index: 10;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    overflow: hidden;
+    top: 100%;
+    left: 0;
+}
+
+.legordulo_tartalom a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: 0.2s;
+}
+
+.legordulo:hover > .legordulo_tartalom {
+    display: block;
+}
+
+.legordulo_tartalom a:hover {
+    background-color: rgb(250, 186, 59);
+    color: rgb(18, 18, 24);
+}
+
+/* --- HERO SZEKCIÓ (MOTTÓIG TARTÓ HÁTTÉR) --- */
+.hero_szekcio {
+  position: relative;    
+  text-align: center;    
+  padding: 40px 20px;    
+  overflow: hidden;      
+}
+
+.hero_szekcio .hatter_kep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;         
+  object-fit: cover;
+  object-position: bottom;    
+  z-index: -1;          
+}
+
+/* --- VÉGTELENÍTETT AUTOMATIKUS SLIDER --- */
+.vegtelen-slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px 0;
+  position: relative;
+}
+
+.slider-sav {
+  display: flex;
+  gap: 20px;
+  width: max-content; 
+  animation: csuszas 20s linear infinite;
+}
+
+/* HA RÁVISZIK AZ EGERET: Az animáció megáll (pause) */
+.vegtelen-slider:hover .slider-sav {
+    animation-play-state: paused;
+}
+
+/* KÁRTYA STÍLUSOK */
+.card {
+    background-color: rgb(34, 34, 42);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;        /* Fix szélesség a pontos csúszáshoz */
+    flex-shrink: 0;      /* Nem engedi, hogy a böngésző összenyomja a kártyákat */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.card .container {
+    padding: 15px;
+}
+
+.card p {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+
+/* AZ ANIMÁCIÓ LOGIKÁJA */
+@keyframes csuszas {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px)); 
+  }
+}
+
+
+.side-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;     
+  top: 0;           
+  background-color: #24252a; 
+  min-width: 160px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.has-side-almenu {
+  position: relative;
+}
+
+.has-side-almenu:hover .side-submenu {
+  display: block;
+}
+
+.side-submenu a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.side-submenu a:hover {
+  background-color: #3e3f46; 
+}
+.legordulo_tartalom {  
+  position: absolute; 
+  overflow: visible; 
+  z-index: 100; 
+}
+
+.nav-logo {
+    height: 48px;
+    width: auto;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   ÜDVÖZLŐ / BEJELENTKEZŐ MENÜ KÁRTYA STÍLUSOK (Kezdőmenü rész)
+   ========================================================================== */
+
+/* A kártyát és a fejlécet összefogó központi tároló */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 60px auto;
+    padding: 0 15px;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* A kezdőmenü kártya (Box) alapja */
+.auth-card {
+    background-color: rgb(34, 34, 42); /* Megegyezik a navbar és a kártyák színével */
+    width: 100%;
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgb(44, 44, 54);
+    margin-top: 10px;
+}
+
+/* Univerzális gombalapok az auth-kártyán belül */
+.auth-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 4px;
+    text-align: center;
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+/* Gomb animáció rátartáskor (kissé megemelkedik) */
+.auth-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Regisztráció gomb (Tele sárga) */
+.auth-btn-primary {
+    background-color: rgb(250, 186, 59);
+    color: rgb(18, 18, 24);
+}
+
+.auth-btn-primary:hover {
+    background-color: rgb(255, 204, 102);
+}
+
+/* Bejelentkezés gomb (Fekete/Sötét alapon sárga keret és szöveg) */
+.auth-btn-secondary {
+    background-color: rgb(18, 18, 24);
+    color: rgb(250, 186, 59);
+    border: 2px solid rgb(250, 186, 59);
+    padding: 12px; /* Korrigálva a border vastagsága miatt */
+}
+
+.auth-btn-secondary:hover {
+    background-color: rgb(250, 186, 59);
+    color: rgb(18, 18, 24);
+}
+
+/* Vendég profil link */
+.auth-btn-guest {
+    background-color: transparent;
+    color: rgb(160, 160, 171);
+    font-size: 14px;
+    font-weight: normal;
+    padding: 8px;
+}
+
+.auth-btn-guest:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+/* ==========================================================================
+   BEJELENTKEZÉS ÉS REGISZTRÁCIÓS ŰRLAP STÍLUSOK (Input mezők)
+   ========================================================================== */
+
+/* Belső alcím stílus a kártyán belül */
+.auth-card h2 {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Az űrlap elemeit összefogó box */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Egy-egy beviteli blokk tárolója */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+/* Mezők feletti kis feliratok */
+.input-group label {
+    font-size: 14px;
+    color: rgb(250, 186, 59); /* Sárga feliratok a jó olvashatóságért */
+    font-weight: bold;
+}
+
+/* Modern sötét input mezők */
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(24, 24, 30); /* Kicsit sötétebb háttér, mint a kártya */
+    border: 1px solid rgb(54, 54, 64);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Amikor a felhasználó belekattint a mezőbe (Focus) */
+.input-group input:focus {
+    outline: none;
+    border-color: rgb(250, 186, 59); /* Sárgán világít a keret */
+    box-shadow: 0 0 8px rgba(250, 186, 59, 0.2);
+}
+
+/* Gombként működő HTML <button> elem igazítása a meglévő .auth-btn-hez */
+.auth-form button.auth-btn {
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Alsó apróbetűs/átirányító szövegek a kártya alján */
+.auth-footer-text {
+    font-size: 14px;
+    color: rgb(160, 160, 171);
+    text-align: center;
+    margin-top: 5px;
+}
+
+.auth-footer-text a {
+    color: rgb(250, 186, 59);
+    text-decoration: none;
+    font-weight: bold;
+    transition: text-decoration 0.2s;
+}
+
+.auth-footer-text a:hover {
+    text-decoration: underline;
+}
+
+.hamburger_kep {
+    height: 750px;
+    width: auto;
+    border-style: solid;
+    border-color: rgb(226, 226, 5);
+    border-radius: 15px;
+}
+
+.hamburger_cim {
+    text-align: center;
+    font-size: 90px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 60px auto;
+    padding: 0 15px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.termcim {
+    text-align: right;
+    font-size: 50px;
+    margin-right: 400px;
+    margin-left: auto;
+    font-weight: bold;
+
+}
+.termszoveg {
+    flex: 1;
+    text-align: left;
+    margin-left: 200px;
+    font-size: larger;
+}
+
+.keptarto {
+    flex: 0 0 250px;
+}
+
+.zsiros {
+    display: flex;
+}
+
+#ar {
+    font-weight: bold;
+    font-size: 30px;
+    font-style: italic;
+    text-decoration: underline;
+}

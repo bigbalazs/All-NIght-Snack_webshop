@@ -668,3 +668,39 @@ footer {
     font-style: italic;
     text-decoration: underline;
 }
+
+.kuldetesunk{
+    border: 20px, rgb(250, 186, 59);
+
+}
+
+.kartya-kontener {
+    display: flex;
+    margin-top: 60px;
+}
+
+.kartya {
+    border-radius: 12px;
+    padding: 24px 32px;
+    margin-bottom: 5px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    border: 10px solid #334155;
+    background-color: #1e293b;
+    transition: 0.3s ease-in-out;
+    width: 50%;
+    margin-left: 30px;
+    margin-right: 30px;;
+}
+
+.kartya:hover {
+    scale: 1.1;
+    background-color: #111822;
+}
+
+.kartya img {
+    width: 13%;
+    height: 40%;
+    display: block;
+    margin-left: auto;    
+    margin-right: auto;
+}

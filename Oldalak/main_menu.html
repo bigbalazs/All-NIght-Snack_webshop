@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AllNightSnack - Főoldal</title>
     <link rel="stylesheet" href="../ANS.css">
+    <script src="profile.js" defer></script>
+    <script src="cart.js" defer></script>
 </head>
 <body>
 
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-links-left">
-    <a href="main_menu.html" class="logo-link">
+      <a href="main_menu.html" class="logo-link">
         <img src="../Alapkepek/ANS_logo.png" class="nav-logo" alt="Kezdőlap">
-        </a>
+      </a>
       <div class="legordulo">
         <button class="legordulo_gomb">Kínálat</button>
         <div class="legordulo_tartalom">
@@ -21,9 +23,10 @@
           <div class="has-side-almenu">
             <a href="#etelek" class="almenu-fejlec">Ételek <span class="nyil">▶</span></a>
             <div class="side-submenu">
-              <a href="#hotdog">Hotdog</a>
-              <a href="#hamburger">Hamburger</a>
-              <a href="#melegszendvics">Melegszendvics</a>
+              <a href="hotdog.html">Hotdog</a>
+              <a href="hamburger.html">Hamburger</a>
+              <a href="pizza.html">Pizza</a>
+              <a href="melegszendvics.html">Melegszendvics</a>
             </div>
           </div>
           
@@ -36,7 +39,6 @@
               <a href="#energiaital">Energiaital 18+</a>
             </div>
           </div>
-          
 
           <a href="#akciok">Akciók</a>
         </div>
@@ -46,98 +48,174 @@
         <a href="menuk.html">Menük</a>
       </div>
 
-   
       <div class="legordulo">
         <button class="legordulo_gomb">Rólunk</button>
         <div class="legordulo_tartalom">
           <a href="tortenetunk.html">Történetünk</a>
-          <a href="#galeria">Galéria</a>
-          <a href="#kapcsolat">Kapcsolat</a>
+          <a href="galeria.html">Galéria</a>
+          <a href="kapcsolat.html">Kapcsolat</a>
         </div>
       </div>
-      
     </div>
     
     <div class="nav-right">
       <div class="nav-cart">
-        <a href="#kosar" class="cart-link">
+        <a href="#kosar" class="cart-link" onclick="toggleCart(); return false;">
           <img src="../Alapkepek/bevasarlokocsi.png" class="cart-img" alt="kosar">
+          <span id="cart-count">0</span>
         </a>
       </div>
 
       <div class="nav-profile">
-        <a href="#profil" class="profile-link">
-          <img src="../Alapkepek/profil.png" class="profile-img" alt="Profil">
-        </a>
+        <div class="dropdownmenu">
+          <button class="profileBtn" type="button"><img src="../Alapkepek/profil.png" class="profile-img" alt="Profil"></button>
+          <a href="" class="profile-link"></a>
+        </div>
       </div>
     </div>
   </div>
 </nav>
 
 <div class="hero_szekcio">
-<img src="../Alapkepek/fooldal_hatter.png" alt="Háttér" class="hatter_kep">
- 
-<img src="../Alapkepek/ANS_logo.png" class="logo" width="200" alt="AllNightSnack Logo">
-
-<h1 style="text-align: center;">AllNightSnack</h1>
-<h4 style="text-align: center;">,,Hajnali éhség? AllNightSnack!"</h4>
+  <img src="../Alapkepek/fooldal_hatter.png" alt="Háttér" class="hatter_kep">
+  <img src="../Alapkepek/ANS_logo.png" class="logo" width="200" alt="AllNightSnack Logo">
+  <h1 style="text-align: center;">AllNightSnack</h1>
+  <h4 style="text-align: center;">,,Hajnali éhség? AllNightSnack!"</h4>
 </div>
 
 <div class="slider-wrapper">
-  
   <div class="vegtelen-slider">
-  <div class="slider-sav">
-    
-    <div class="card">
-      <img src="../Reklam_kepek/hamburgerreklam.png" alt="Étel 1" style="width:100%">
-      <div class="container">
-        <h4><b>Sajtos Hamburger</b></h4>
-        <p>Szaftos marhahúspogácsa, cheddar sajt, házi szósz.</p>
+    <div class="slider-sav">
+      
+      <div class="card">
+        <a href="hamburger.html">
+          <img src="../Reklam_kepek/hamburgerreklam.png" alt="Étel 1" style="width:100%">
+        </a>
+        <div class="container">
+          <h4><b>Sajtos Hamburger</b></h4>
+          <p>Szaftos marhahúspogácsa, cheddar sajt, házi szósz.</p>
+          <p style="color: rgb(250, 186, 59); font-weight: bold; margin: 10px 0;">2 000 Ft</p>
+          <button class="add-to-cart-btn" onclick="addToCart('Sajtos Hamburger', 2000)">Kosárba</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="../Reklam_kepek/pizzareklam.png" alt="Étel 2" style="width:100%">
-      <div class="container">
-        <h4><b>AllNight Pizza</b></h4>
-        <p>Friss bazsalikom, mozzarella, sonka, gomba.</p>
+      <div class="card">
+        <a href="pizza.html">
+          <img src="../Reklam_kepek/pizzareklam.png" alt="Étel 2" style="width:100%">
+        </a>
+        <div class="container">
+          <h4><b>AllNight Pizza</b></h4>
+          <p>Friss bazsalikom, mozzarella, sonka, gomba.</p>
+          <p style="color: rgb(250, 186, 59); font-weight: bold; margin: 10px 0;">3 000 Ft</p>
+          <button class="add-to-cart-btn" onclick="addToCart('AllNight Pizza', 3000)">Kosárba</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="../Reklam_kepek/hotdogreklam.png" alt="Étel 3" style="width:100%">
-      <div class="container">
-        <h4><b>Crispy Hot-Dog</b></h4>
-        <p>Roppanós virsli, pirított hagyma, mustár, ketchup.</p>
+      <div class="card">
+        <a href="hotdog.html">
+          <img src="../Reklam_kepek/hotdogreklam.png" alt="Étel 3" style="width:100%">
+        </a>
+        <div class="container">
+          <h4><b>Crispy Hot-Dog</b></h4>
+          <p>Roppanós virsli, pirított hagyma, mustár, ketchup.</p>
+          <p style="color: rgb(250, 186, 59); font-weight: bold; margin: 10px 0;">1 099 Ft</p>
+          <button class="add-to-cart-btn" onclick="addToCart('Crispy Hot-Dog', 1099)">Kosárba</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="../Reklam_kepek/hamburgerreklam.png" alt="Étel 1" style="width:100%">
-      <div class="container">
-        <h4><b>Sajtos Hamburger</b></h4>
-        <p>Szaftos marhahúspogácsa, cheddar sajt, házi szósz.</p>
+      <!-- Második kör a végtelen sliderhez -->
+      <div class="card">
+        <a href="hamburger.html">
+          <img src="../Reklam_kepek/hamburgerreklam.png" alt="Étel 1" style="width:100%">
+        </a>
+        <div class="container">
+          <h4><b>Sajtos Hamburger</b></h4>
+          <p>Szaftos marhahúspogácsa, cheddar sajt, házi szósz.</p>
+          <p style="color: rgb(250, 186, 59); font-weight: bold; margin: 10px 0;">2 000 Ft</p>
+          <button class="add-to-cart-btn" onclick="addToCart('Sajtos Hamburger', 2000)">Kosárba</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="../Reklam_kepek/pizzareklam.png" alt="Étel 2" style="width:100%">
-      <div class="container">
-        <h4><b>AllNight Pizza</b></h4>
-        <p>Friss bazsalikom, mozzarella, sonka, gomba.</p>
+      <div class="card">
+        <a href="pizza.html">
+          <img src="../Reklam_kepek/pizzareklam.png" alt="Étel 2" style="width:100%">
+        </a>
+        <div class="container">
+          <h4><b>AllNight Pizza</b></h4>
+          <p>Friss bazsalikom, mozzarella, sonka, gomba.</p>
+          <p style="color: rgb(250, 186, 59); font-weight: bold; margin: 10px 0;">3 000 Ft</p>
+          <button class="add-to-cart-btn" onclick="addToCart('AllNight Pizza', 3000)">Kosárba</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="../Reklam_kepek/hotdogreklam.png" alt="Étel 3" style="width:100%">
-      <div class="container">
-        <h4><b>Crispy Hot-Dog</b></h4>
-        <p>Roppanós virsli, pirított hagyma, mustár, ketchup.</p>
+      <div class="card">
+        <a href="hotdog.html">
+          <img src="../Reklam_kepek/hotdogreklam.png" alt="Étel 3" style="width:100%">
+        </a>
+        <div class="container">
+          <h4><b>Crispy Hot-Dog</b></h4>
+          <p>Roppanós virsli, pirított hagyma, mustár, ketchup.</p>
+          <p style="color: rgb(250, 186, 59); font-weight: bold; margin: 10px 0;">1 099 Ft</p>
+          <button class="add-to-cart-btn" onclick="addToCart('Crispy Hot-Dog', 1099)">Kosárba</button>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
-</div>
+
+<section class="timeline-section">
+    <div class="timeline-container">
+        <h2 class="timeline-heading">ÍGY LESZ A HAJNALI ÉHSÉGBŐL KAJAKÓMA</h2>
+        <div class="timeline-image-wrapper">
+            <img src="../Alapkepek/folyamatok.jpeg" alt="Idővonal folyamat" class="timeline-main-img">
+        </div>
+        <div class="timeline-text-grid">
+            <div class="text-step">
+                <h3>0. PERC: KATTINTASZ</h3>
+                <p>Összerakod a kosarad, leadod a rendelést, mi pedig azonnal izzítjuk a rostlapot.</p>
+            </div>
+            <div class="text-step">
+                <h3>10. PERC: SÜTJÜK</h3>
+                <p>A hús már serceg, a sajt olvad, a pizza pedig épp a 400 fokos kemencébe csusszan.</p>
+            </div>
+            <div class="text-step">
+                <h3>30. PERC: ESZEL</h3>
+                <p>Kopog a futár. A kaja tűzforró, a szósz szaftos, neked már csak élvezned kell.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="reviews-section">
+    <div class="reviews-container">
+        <h2 class="reviews-title">AKIKET MÁR MEGMENTETTÜNK AZ ÉHSÉGTŐL</h2>
+        <div class="reviews-subtitle">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text"><strong>4.8 / 5</strong> (300+ valós értékelés alapján)</span>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="card-stars">★★★★★</div>
+                <p class="review-text">„Péntek este buli után, hajnali 3-kor rendeltem meg a hotdogot. Komolyan mondom, életet mentett. 20 perc alatt itt volt, a szósz zseniális, a kaja meg tűzforró! Fixen tőletek rendelek legközelebb is.”</p>
+                <div class="review-author">Bence, VII. kerület</div>
+            </div>
+
+            <div class="review-card">
+                <div class="card-stars">★★★★★</div>
+                <p class="review-text">„Skeptikus voltam, mert az éjszakai helyek hajlamosak összecsapni a kaját, de ez a hamburger valami brutális jó lett. A hús szaftos, a zsemle puha. Külön pacsi a futárnak, nagyon jófej volt!”</p>
+                <div class="review-author">Dorina</div>
+            </div>
+          
+            <div class="review-card">
+                <div class="card-stars">★★★★★</div>
+                <p class="review-text">„Home office és éjszakai műszak mellé a legjobb társaság. Amikor már minden zárva van, ők még mindig a legdurvább pizzát hozzák ki. Gyors, pontos, laktató.”</p>
+                <div class="review-author">Tamás</div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <footer>
   <div class="footer-content">
@@ -145,6 +223,26 @@
   </div>
 </footer>
 
+<!-- FELUGRÓ KOSÁR ABLAK -->
+<div id="cart-modal" class="cart-modal">
+  <div class="cart-modal-header">
+    <h3>🛒 Kosár tartalma</h3>
+    <button onclick="toggleCart()" class="close-cart-btn">✖</button>
+  </div>
   
+  <ul id="cart-items" class="cart-items-list"></ul>
+  
+  <div class="cart-modal-footer">
+    <div class="cart-total-row">
+      <span>Összesen:</span>
+      <strong><span id="cart-total">0</span> Ft</strong>
+    </div>
+    <div class="cart-actions">
+      <button onclick="clearCart()" class="btn-clear-cart">Ürítés</button>
+      <button onclick="checkout()" class="btn-checkout">Megrendelés</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamburger</title>
+    <title>Melegszendvics</title>
     <link rel="stylesheet" href="../ANS.css">
 </head>
 <body>
@@ -16,16 +16,17 @@
       <div class="legordulo">
         <button class="legordulo_gomb">Kínálat</button>
         <div class="legordulo_tartalom">
-          
+
           <div class="has-side-almenu">
             <a href="#etelek" class="almenu-fejlec">Ételek <span class="nyil">▶</span></a>
             <div class="side-submenu">
-              <a href="#hotdog">Hotdog</a>
-              <a href="#hamburger">Hamburger</a>
-              <a href="#melegszendvics">Melegszendvics</a>
+              <a href="hotdog.html">Hotdog</a>
+              <a href="hamburger.html">Hamburger</a>
+              <a href="pizza.html">Pizza</a>
+              <a href="melegszendvics.html">Melegszendvics</a>
             </div>
           </div>
-          
+
           <div class="has-side-almenu">
             <a href="#italok" class="almenu-fejlec">Italok <span class="nyil">▶</span></a>
             <div class="side-submenu">
@@ -35,7 +36,6 @@
               <a href="#energiaital">Energiaital 18+</a>
             </div>
           </div>
-          
 
           <a href="#akciok">Akciók</a>
         </div>
@@ -45,22 +45,21 @@
         <a href="menuk.html">Menük</a>
       </div>
 
-   
       <div class="legordulo">
         <button class="legordulo_gomb">Rólunk</button>
         <div class="legordulo_tartalom">
           <a href="tortenetunk.html">Történetünk</a>
-          <a href="#galeria">Galéria</a>
-          <a href="#kapcsolat">Kapcsolat</a>
+          <a href="galeria.html">Galéria</a>
+          <a href="kapcsolat.html">Kapcsolat</a>
         </div>
       </div>
-      
+
     </div>
-    
+
     <div class="nav-right">
       <div class="nav-cart">
         <a href="#kosar" class="cart-link">
-          <img src="../Alapkepek/bevasarlokocsi.png" class="cart-img" alt="kosar">
+          <img src="../Alapkepek/bevasarlokocsi.png" class="cart-img" alt="Kosár">
         </a>
       </div>
 
@@ -73,39 +72,62 @@
   </div>
 </nav>
 
-
-
 <section class="auth-card">
-  
-  
-<div class="zsiros">
-  <div class="termszoveg">
+  <article class="product">
 
-    <p class="termcim">Melegszendvics</p>
-    <br>
-    <p>🔥 <b>MELEG, OLVADÓS, ELLENÁLLHATATLAN!</b> 🔥 <br>
+    <div class="product-info">
+      <span class="product-badge">🔥 Meleg, olvadós, ellenállhatatlan</span>
 
-Ropogósra pirított kenyér, ínycsiklandó sonka, zamatos kukorica és bőségesen olvadó sajt – kell ennél több? 🤤
-<br> <br>
-A sonkás-sajtos-kukoricás melegszendvicsünk tökéletes választás, ha valami igazán finom, laktató és frissen készült harapnivalóra vágysz! <br><br>
+      <h1 class="product-title">Melegszendvics</h1>
+      <p class="product-lead">
+        Ropogósra pirított kenyér, ínycsiklandó Pick szalámi, zamatos kukorica
+        és bőségesen olvadó sajt – kell ennél több? 🤤
+      </p>
 
+      <p class="product-desc">
+        A szalámis-sajtos-kukoricás melegszendvicsünk tökéletes választás, ha valami
+        igazán finom, laktató és frissen készült harapnivalóra vágysz!
+      </p>
 
-    <ul>
-      <li>Aranyló olvadó sajt</li>
-      <li>Prémium sonka</li>
-      <li>Édes kukorica</li>
-      
-    </ul>
-    <br>
-    <p id="ar">990 Ft</p>
-    <br><br>
-    
-  </div> 
-  <div class="keptarto">
-    <img src="../Reklam_kepek/melegszenics.png" alt="Hamburger" class="hamburger_kep">
+      <ul class="product-features">
+        <li>Aranyló olvadó sajt</li>
+        <li>Prémium szalámi</li>
+        <li>Édes kukorica</li>
+      </ul>
+
+      <div class="product-buy">
+        <p class="product-price" id="ar">990 Ft</p>
+        <button type="button" class="order-btn"
+                onclick="addToCart('Melegszendvics', 990, this)">KOSÁRBA</button>
+      </div>
+    </div>
+
+    <figure class="product-media">
+      <img src="../Reklam_kepek/melegszendvics.png" alt="Melegszendvics szalámival, sajttal és kukoricával" class="product-img">
+    </figure>
+
+  </article>
+
+  <div id="cart-modal" class="cart-modal">
+  <div class="cart-modal-header">
+    <h3>🛒 Kosár tartalma</h3>
+    <button onclick="toggleCart()" class="close-cart-btn">✖</button>
+  </div>
+
+  <ul id="cart-items" class="cart-items-list"></ul>
+
+  <div class="cart-modal-footer">
+    <div class="cart-total-row">
+      <span>Összesen:</span>
+      <strong><span id="cart-total">0</span> Ft</strong>
+    </div>
+    <div class="cart-actions">
+      <button onclick="clearCart()" class="btn-clear-cart">Ürítés</button>
+      <button onclick="checkout()" class="btn-checkout">Megrendelés</button>
+    </div>
   </div>
 </div>
-<button type="submit" class="auth-btn auth-btn-primary">RENDELÉS</button>
+
 </section>
 </body>
 </html>

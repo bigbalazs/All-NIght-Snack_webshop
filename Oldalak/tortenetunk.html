@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../ANS.css">
+    <script src="profile.js" defer></script>
+    <script src="cart.js" defer></script>
     <title>Történetünk</title>
 </head>
 <body>
+
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-links-left">
-    <a href="main_menu.html" class="logo-link">
+      <a href="main_menu.html" class="logo-link">
         <img src="../Alapkepek/ANS_logo.png" class="nav-logo" alt="Kezdőlap">
-        </a>
+      </a>
       <div class="legordulo">
         <button class="legordulo_gomb">Kínálat</button>
         <div class="legordulo_tartalom">
-          
           <div class="has-side-almenu">
             <a href="#etelek" class="almenu-fejlec">Ételek <span class="nyil">▶</span></a>
             <div class="side-submenu">
-              <a href="#hotdog">Hotdog</a>
-              <a href="#hamburger">Hamburger</a>
-              <a href="#melegszendvics">Melegszendvics</a>
+              <a href="hotdog.html">Hotdog</a>
+              <a href="hamburger.html">Hamburger</a>
+              <a href="pizza.html">Pizza</a>
+              <a href="melegszendvics.html">Melegszendvics</a>
             </div>
           </div>
           
@@ -35,7 +38,6 @@
               <a href="#energiaital">Energiaital 18+</a>
             </div>
           </div>
-          
 
           <a href="#akciok">Akciók</a>
         </div>
@@ -45,79 +47,106 @@
         <a href="menuk.html">Menük</a>
       </div>
 
-   
       <div class="legordulo">
         <button class="legordulo_gomb">Rólunk</button>
         <div class="legordulo_tartalom">
           <a href="tortenetunk.html">Történetünk</a>
-          <a href="#galeria">Galéria</a>
-          <a href="#kapcsolat">Kapcsolat</a>
+          <a href="galeria.html">Galéria</a>
+          <a href="kapcsolat.html">Kapcsolat</a>
         </div>
       </div>
-      
     </div>
     
     <div class="nav-right">
       <div class="nav-cart">
-        <a href="#kosar" class="cart-link">
+        <a href="#kosar" class="cart-link" onclick="toggleCart(); return false;">
           <img src="../Alapkepek/bevasarlokocsi.png" class="cart-img" alt="kosar">
+          <span id="cart-count">0</span>
         </a>
       </div>
 
       <div class="nav-profile">
-        <a href="#profil" class="profile-link">
-          <img src="../Alapkepek/profil.png" class="profile-img" alt="Profil">
-        </a>
+        <div class="dropdownmenu">
+          <button class="profileBtn" type="button"><img src="../Alapkepek/profil.png" class="profile-img" alt="Profil"></button>
+          <a href="" class="profile-link"></a>
+        </div>
       </div>
     </div>
   </div>
 </nav>
 
-<div class="hero_szekcio">
+<div class="hero_szekcio story-hero">
   <img src="../Alapkepek/fooldal_hatter.png" alt="Háttér" class="hatter_kep">
- 
   <img src="../Alapkepek/ANS_logo.png" class="logo" width="200" alt="AllNightSnack Logo">
 
-  <h1 class="aloldal-cim" style="text-align: center;">Történetünk – All Night Snack</h1>
+  <h1 class="aloldal-cim">Történetünk – All Night Snack</h1>
+  
   <div class="leiras-quote">
-          <p>
-              "Amikor a város elcsendesedik, az éhség akkor ébred fel.
-              Biztosan veled is megtörtént már: egy késő estébe nyúló vizsgafelkészülés, 
-              egy pörgős online meccs a haverokkal, egy éjszakai sorozatmaraton, vagy egy jól sikerült buli után hirtelen megéheztél. 
-              Ránéztél az órára, átkutattad a hűtőt, és csak az üresség fogadott. A megszokott éttermek és boltok pedig már régen bezártak."
-          </p>
+    <p>
+      „Amikor a város elcsendesedik, az éhség akkor ébred fel. Biztosan veled is megtörtént már: egy késő estébe nyúló vizsgafelkészülés, egy pörgős online meccs a haverokkal, egy éjszakai sorozatmaraton, vagy egy jól sikerült buli után hirtelen megéheztél. Ránéztél az órára, átkutattad a hűtőt, és csak az üresség fogadott. A megszokott éttermek és boltok pedig már régen bezártak.”
+    </p>
   </div>
 </div>
 
 <div class="kartya-kontener">
-<div class="kartya">
-    <h2 class="alcim">Így született meg az All Night Snack ötlete.</h2>
-
+  <div class="kartya">
+    <div class="kartya-ikon">💡</div>
+    <h2 class="alcim">Így született meg az ötlet</h2>
     <p class="leiras-p">
-        Tudtuk, hogy nem vagyunk egyedül ezzel a problémával. Szükség volt egy olyan éjszakai nasi futárszolgálatra, amelyre bármikor számíthatsz, 
-        amikor a legtöbb hely már pihen. A célunk kezdettől fogva egyszerű volt: a legfinomabb nassolnivalókat,
-        hűsítő italokat és éjszakai kedvenceket elvinni hozzád gyorsan, megbízhatóan és frissen – pont akkor, amikor a legnagyobb szükséged van rájuk.
+      Tudtuk, hogy nem vagyunk egyedül ezzel a problémával. Szükség volt egy olyan éjszakai futárszolgálatra, amelyre bármikor számíthatsz, amikor a legtöbb hely már pihen. A célunk kezdettől fogva egyszerű volt: a legfinomabb nassolnivalókat, hűsítő italokat és éjszakai kedvenceket elvinni hozzád gyorsan, megbízhatóan és frissen – pont akkor, amikor a legnagyobb szükséged van rájuk.
     </p>
-    <br>
-</div>
-    
-<div class="kartya"> 
+  </div>
+      
+  <div class="kartya"> 
+    <div class="kartya-ikon">⚡</div>
     <h2 class="alcim">Miért pont mi?</h2>
     <p class="leiras-p">
-      Nálunk nincs „sajnos már bezártunk”, hiszen kifejezetten arra szakosodtunk, hogy akkor álljunk rendelkezésedre, 
-      amikor a város többi része már alszik. A sós és édes rágcsálnivalóktól kezdve a prémium snackeken át az hűsítő italokig rendkívül széles választékkal
-      várunk, hogy minden éjszakai kívánságot teljesíteni tudjunk. Ráadásul pontosan tudjuk, hogy az éjszakai éhség nem tud várni, 
-      ezért villámgyors és megbízható futárjaink a lehető legrövidebb idő alatt juttatják el hozzád a kedvenc finomságaidat.
+      Nálunk nincs „sajnos már bezártunk”, hiszen kifejezetten arra szakosodtunk, hogy akkor álljunk rendelkezésedre, amikor a város többi része már alszik. A sós és édes rágcsálnivalóktól kezdve a prémium snackeken át a hűsítő italokig széles választékkal várunk. Villámgyors futárjaink pedig a lehető legrövidebb idő alatt juttatják el hozzád a kedvenceidet.
     </p>
+  </div>
+
+  <div class="kartya">
+    <div class="kartya-ikon">🎯</div>
+    <h2 class="alcim">A küldetésünk</h2>
+    <p class="leiras-p">
+      Az All Night Snacknél hisszük, hogy a késő esti pillanatok éppúgy megérdemlik a kényeztetést, mint a nap többi része. Legyen szó egy egyedül töltött nyugodt estéről vagy egy spontán házibuliról, mi gondoskodunk róla, hogy senki se maradjon éhesen.
+    </p>
+  </div>
 </div>
 
-<div class="kartya">
-    <h2 class="alcim">A küldetésünk:</h2>
-    <p class="leiras-p">
-        Az All Night Snacknél hisszük, hogy a késő esti pillanatok éppúgy megérdemlik a kényeztetést, mint a nap többi része.
-        Legyen szó egy egyedül töltött nyugodt estéről vagy egy spontán házibuliról, mi gondoskodunk róla, hogy senki se maradjon éhesen.
-    </p>
+<!-- CSELEKVÉSRE ÖSZTÖNZŐ SZEKCIÓ AZ OLDAL ALJÁN -->
+<div class="story-cta">
+  <h3>Megéheztél olvasás közben?</h3>
+  <p>Nézz szét a frissen sült burgereink, hotdogjaink és menüink között!</p>
+  <a href="main_menu.html" class="auth-btn auth-btn-primary story-cta-btn">IRÁNY A KÍNÁLAT 🍔</a>
 </div>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2026 AllNightSnack Kft. &ndash; Készítette az ANS csapata</p>
+  </div>
+</footer>
+
+<!-- FELUGRÓ KOSÁR ABLAK -->
+<div id="cart-modal" class="cart-modal">
+  <div class="cart-modal-header">
+    <h3>🛒 Kosár tartalma</h3>
+    <button onclick="toggleCart()" class="close-cart-btn">✖</button>
+  </div>
+  
+  <ul id="cart-items" class="cart-items-list"></ul>
+  
+  <div class="cart-modal-footer">
+    <div class="cart-total-row">
+      <span>Összesen:</span>
+      <strong><span id="cart-total">0</span> Ft</strong>
+    </div>
+    <div class="cart-actions">
+      <button onclick="clearCart()" class="btn-clear-cart">Ürítés</button>
+      <button onclick="checkout()" class="btn-checkout">Megrendelés</button>
+    </div>
+  </div>
 </div>
+
 </body>
 </html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot-dog</title>
+    <title>Crispy HotDog</title>
     <link rel="stylesheet" href="../ANS.css">
+    <script src="cart.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -16,7 +17,7 @@
       <div class="legordulo">
         <button class="legordulo_gomb">Kínálat</button>
         <div class="legordulo_tartalom">
-          
+
           <div class="has-side-almenu">
             <a href="#etelek" class="almenu-fejlec">Ételek <span class="nyil">▶</span></a>
             <div class="side-submenu">
@@ -25,7 +26,7 @@
               <a href="melegszendvics.html">Melegszendvics</a>
             </div>
           </div>
-          
+
           <div class="has-side-almenu">
             <a href="#italok" class="almenu-fejlec">Italok <span class="nyil">▶</span></a>
             <div class="side-submenu">
@@ -35,7 +36,6 @@
               <a href="#energiaital">Energiaital 18+</a>
             </div>
           </div>
-          
 
           <a href="#akciok">Akciók</a>
         </div>
@@ -45,7 +45,6 @@
         <a href="menuk.html">Menük</a>
       </div>
 
-   
       <div class="legordulo">
         <button class="legordulo_gomb">Rólunk</button>
         <div class="legordulo_tartalom">
@@ -54,64 +53,80 @@
           <a href="kapcsolat.html">Kapcsolat</a>
         </div>
       </div>
-      
+
     </div>
-    
+
     <div class="nav-right">
       <div class="nav-cart">
-        <a href="#kosar" class="cart-link">
+        <a href="#kosar" class="cart-link" onclick="toggleCart(); return false;">
           <img src="../Alapkepek/bevasarlokocsi.png" class="cart-img" alt="kosar">
+          <span id="cart-count">0</span>
         </a>
       </div>
 
       <div class="nav-profile">
-        <div class="dropdownmenu">
-         <button class="profileBtn" type="button"><img src="../Alapkepek/profil.png" class="profile-img" alt="Profil"></button>
-        <a href="" class="profile-link">
-          
+        <a href="#profil" class="profile-link">
+          <img src="../Alapkepek/profil.png" class="profile-img" alt="Profil">
         </a>
-        </div>
       </div>
     </div>
   </div>
 </nav>
 
-
-
 <section class="auth-card">
-  
-  
-<div class="zsiros">
-  <div class="termszoveg">
+  <article class="product">
 
-    <p class="termcim">Crispy HotDog</p>
-    <br>
-    <p>🌭 <b>CRISPY HOTDOG – KÍVÜL ROPPOGÓS, BELÜL SZAFTOS!</b> <br>
+    <div class="product-info">
+      <span class="product-badge">🔥 Ütős street food klasszikus</span>
 
-Ha egy igazán ütős street foodra vágysz, a Crispy Hotdog tökéletes választás! Ropogósra sült, ízletes <br>virsli, friss zöldségek, krémes szószok és egy puha, aranybarnára pirított hotdog kifli találkozik<br> egyetlen falatban.
-<br> <br>
-A ropogós textúra, a szaftos virsli és a gazdag feltétek tökéletes kombinációja minden harapást <br>élménnyé varázsol. Legyen szó egy gyors ebédről, egy kiadós nasiról vagy egy esti kajálásról, ez a <br>hotdog garantáltan meghozza az étvágyadat. <br><br>
+      <h1 class="product-title">Crispy HotDog</h1>
+      <p class="product-lead">
+        Ropogósra pirított kifli, szaftos bécsi sertésvirsli, ízletes pirított hagyma, ketchup és mustár – kell ennél több? 😋
+      </p>
 
-🔥 <b>Frissen készítve. Ropogósra sütve. Bőségesen megpakolva.</b> <br>
+      <p class="product-desc">
+        A Crispy HotDogunk tökéletes választás, ha egy frissen készült, kívül ropogós, belül szaftos street food klasszikusra vágysz!
+      </p>
 
-Ne csak egy hotdogot egyél – válaszd a Crispy Hotdogot, és tapasztald meg, milyen, amikor a <br>ropogósság és az ízek tökéletesen összeállnak!</p> <br>
-    <ul>
-      <li>Ropogós kifli</li>
-      <li>Bécsi sertésvirsli</li>
-      <li>Pirított hagyma</li>
-      <li>Kechup</li>
-      <li>Mustár</li>
-    </ul>
-    <br>
-    <p id="ar">1099 Ft</p>
-    <br><br>
-    
-  </div> 
-  <div class="keptarto">
-    <img src="../Reklam_kepek/hotdogreklam.png" alt="Hotdog" class="hamburger_kep">
+      <ul class="product-features">
+        <li>Bécsi sertésvirsli</li>
+        <li>Ropogós pirított hagyma</li>
+        <li>Ketchup &amp; mustár</li>
+      </ul>
+
+      <div class="product-buy">
+        <p class="product-price" id="ar">1099 Ft</p>
+        <button type="button" class="order-btn"
+                onclick="addToCart('Crispy Hot-Dog', 1099, this)">KOSÁRBA</button>
+      </div>
+    </div>
+
+    <figure class="product-media">
+      <img src="../Reklam_kepek/hotdogreklam.png" alt="Crispy HotDog bécsi virslivel és pirított hagymával" class="product-img">
+    </figure>
+
+  </article>
+</section>
+
+<!-- FELUGRÓ KOSÁR ABLAK -->
+<div id="cart-modal" class="cart-modal">
+  <div class="cart-modal-header">
+    <h3>🛒 Kosár tartalma</h3>
+    <button onclick="toggleCart()" class="close-cart-btn">✖</button>
+  </div>
+
+  <ul id="cart-items" class="cart-items-list"></ul>
+
+  <div class="cart-modal-footer">
+    <div class="cart-total-row">
+      <span>Összesen:</span>
+      <strong><span id="cart-total">0</span> Ft</strong>
+    </div>
+    <div class="cart-actions">
+      <button onclick="clearCart()" class="btn-clear-cart">Ürítés</button>
+      <button onclick="checkout()" class="btn-checkout">Megrendelés</button>
+    </div>
   </div>
 </div>
-<button type="submit" class="auth-btn auth-btn-primary">RENDELÉS</button>
-</section>
 </body>
 </html>
